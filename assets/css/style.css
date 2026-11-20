@@ -1,0 +1,46 @@
+:root {
+    --bg-color: rgb(250,247,242);
+    --h-heure: 4rem;     
+    --h-titre: 3.75rem;   
+    --texte: #2a2620;
+    --trait: #d9d2c3;
+    --ept: #c0813f;
+    --cours-fond: #eaf0f5;
+    --cours-bande: #5b7a9d;
+    --autre-fond: #f0eee6;
+    --autre-bande: #8c8173;
+    --serif: Georgia, "Times New Roman", serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+body {
+    min-height: 100vh;
+    background-color:var(--bg-color);
+    color: var(--texte);
+    overflow-x: hidden;
+}
+section{background-color: var(--bg-color);}
+.contenu { background: #fff; border: 1px solid var(--trait); }
+.cours, .cours1 {
+    height: calc(var(--h-heure) * 4); 
+    margin-bottom: 1rem;
+    position:relative;
+    background: var(--cours-fond);
+    border-radius: 5px;
+}
+.ept { font-family: var(--serif); color: var(--ept); }
+.git { font-family: var(--serif); font-size: 1.55rem; }
+.cours1.autre .bande, .cours.autre .bande { position: absolute; left: 0; top: 0; bottom: 0; width: 3px;background: var(--autre-bande) ; } 
+.cours1.autre, .cours.autre { background: var(--autre-fond); }
+.bande { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--cours-bande); }
+
+@media (min-width: 768px) {
+    .heure { height: var(--h-heure); }
+    .jour-titre, .heuret { height: var(--h-titre);}
+    .cours1 { margin-bottom: calc(var(--h-heure) * 3); }   
+    .cours  { margin-bottom: 0; }
+
+}
+@media (min-width: 800px) and (max-width: 1200px) {
+    .meta span{ display: none; }
+    
+}
